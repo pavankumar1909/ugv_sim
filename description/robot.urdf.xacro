@@ -1,7 +1,24 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="robot">
 
-    <!-- Example link -->
-    <link name="base_link"></link>
+  <xacro:include filename="robot_core.xacro"/>
 
+  
+
+  <!-- <xacro:base_link/>
+  <xacro:camera_link/>
+  <xacro:lidar_link/>
+  <xacro:imu_link/>
+  <xacro:wheel_left_link/>
+  <xacro:wheel_right_link/>
+  <xacro:caster_wheel_link/>
+  <xacro:chassis_link/>
+
+  <xacro:camera_joint parent="base_link" child="camera_link" xyz="0.2 0 0.1" rpy="0 0 0"/>
+  <xacro:lidar_joint parent="base_link" child="lidar_link" xyz="0 0 0.1" rpy="0 0 0"/>
+  <xacro:imu_joint parent="base_link" child="imu_link" xyz="0 -0.1 0.1" rpy="0 0 0"/>
+  <xacro:wheel_left_joint parent="base_link" child="wheel_left_link" xyz="0 -0.1 -0.05" rpy="0 0 0"/>
+  <xacro:wheel_right_joint parent="base_link" child="wheel_right_link" xyz="0 0.1 -0.05" rpy="0 0 0"/>
+  <xacro:caster_wheel_joint parent="base_link" child="caster_wheel_link" xyz="-0.2 0 -0.05" rpy="0 0 0"/>
+  <xacro:chassis_joint parent="base_link" child="chassis_link" xyz="0 0 0.05" rpy="0 0 0"/> -->
 </robot>

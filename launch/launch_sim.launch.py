@@ -1,7 +1,8 @@
 import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription, ExecuteProcess
+from launch.actions import IncludeLaunchDescription, ExecuteProcess, DeclareLaunchArgument
+from launch.substitutions import LaunchConfiguration
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
 
@@ -18,10 +19,23 @@ def generate_launch_description():
         ]),
         launch_arguments={'use_sim_time': 'true'}.items()
     )
+    
 
+    #  # World argument
+    # world = LaunchConfiguration('world')
+    # declare_world = DeclareLaunchArgument(
+    #     'world',
+    #     default_value=os.path.join(
+    #         get_package_share_directory(package_name),
+    #         'worlds',
+    #         'empty.sdf'
+    #     ),
+    #     description='Gazebo world file'
+    # )
+    
     # Gazebo Sim
     gazebo = ExecuteProcess(
-        cmd=['gz', 'sim', '-v', '4', '-r', 'empty.sdf'],
+        cmd=['gz', 'sim', '-v', '4', '-r', './src/ugv_sim/worlds/obstacles_1.sdf'],  # <-- change to your world file
         output='screen'
     )
 
@@ -43,6 +57,7 @@ def generate_launch_description():
             "/odom@nav_msgs/msg/Odometry@gz.msgs.Odometry",
             "/joint_states@sensor_msgs/msg/JointState@gz.msgs.Model",
             "/tf@tf2_msgs/msg/TFMessage@gz.msgs.Pose_V",
+            "/scan@sensor_msgs/msg/LaserScan@gz.msgs.LaserScan"
         ],
     )
     # RViz2

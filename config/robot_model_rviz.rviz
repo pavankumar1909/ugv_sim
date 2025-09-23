@@ -7,7 +7,6 @@ Panels:
         - /Global Options1
         - /Status1
         - /RobotModel1
-        - /RobotModel1/Status1
       Splitter Ratio: 0.5
     Tree Height: 542
   - Class: rviz_common/Selection
@@ -62,6 +61,10 @@ Visualization Manager:
           Value: true
         chassis:
           Value: true
+        laser_frame:
+          Value: true
+        odom:
+          Value: true
         wheel_left:
           Value: true
         wheel_right:
@@ -72,14 +75,17 @@ Visualization Manager:
       Show Axes: true
       Show Names: false
       Tree:
-        base_link:
-          chassis:
-            caster_wheel:
+        odom:
+          base_link:
+            chassis:
+              caster_wheel:
+                {}
+              laser_frame:
+                {}
+            wheel_left:
               {}
-          wheel_left:
-            {}
-          wheel_right:
-            {}
+            wheel_right:
+              {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -114,6 +120,11 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        laser_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         wheel_left:
           Alpha: 1
           Show Axes: false
@@ -135,7 +146,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: base_link
+    Fixed Frame: odom
     Frame Rate: 30
   Name: root
   Tools:

@@ -1,0 +1,6 @@
+source;share/hbridge_control/hook/cmake_prefix_path.dsv
+source;share/hbridge_control/hook/cmake_prefix_path.sh
+source;share/hbridge_control/local_setup.bash
+source;share/hbridge_control/local_setup.dsv
+source;share/hbridge_control/local_setup.sh
+source;share/hbridge_control/local_setup.zsh

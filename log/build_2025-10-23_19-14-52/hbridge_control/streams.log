@@ -1,0 +1,47 @@
+[0.131s] Invoking command in '/home/pavan/pavan/ugv_ws/build/hbridge_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/pavan/pavan/ugv_ws/build/hbridge_control -- -j4 -l4
+[0.608s] [ 50%] [32mBuilding CXX object CMakeFiles/hbridge_control.dir/src/mobile_base_hardware_interface.cpp.o[0m
+[8.866s] [01m[K/home/pavan/pavan/ugv_ws/src/hbridge_control/src/mobile_base_hardware_interface.cpp:[m[K In member function ‘[01m[Kvirtual mobile_base_hardware::CallbackReturn mobile_base_hardware::MobileBaseHardwareInterface::[01;32m[Kon_init[m[K(const hardware_interface::HardwareInfo&)[m[K’:
+[8.866s] [01m[K/home/pavan/pavan/ugv_ws/src/hbridge_control/src/mobile_base_hardware_interface.cpp:17:53:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvirtual rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn hardware_interface::HardwareComponentInterface::[01;32m[Kon_init[m[K(const hardware_interface::HardwareInfo&)[m[K’ is deprecated: Use on_init(const HardwareComponentInterfaceParams & params) instead. [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+[8.866s]    17 |     if ([01;35m[Khardware_interface::SystemInterface::on_init(info)[m[K != CallbackReturn::SUCCESS) {
+[8.866s]       |         [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+[8.885s] In file included from [01m[K/opt/ros/jazzy/include/hardware_interface/hardware_interface/system_interface.hpp:18[m[K,
+[8.885s]                  from [01m[K/home/pavan/pavan/ugv_ws/src/hbridge_control/include/motor_interface/mobile_base_hardware_interface.hpp:3[m[K,
+[8.885s]                  from [01m[K/home/pavan/pavan/ugv_ws/src/hbridge_control/src/mobile_base_hardware_interface.cpp:1[m[K:
+[8.885s] [01m[K/opt/ros/jazzy/include/hardware_interface/hardware_interface/hardware_component_interface.hpp:226:26:[m[K [01;36m[Knote: [m[Kdeclared here
+[8.886s]   226 |   virtual CallbackReturn [01;36m[Kon_init[m[K(const HardwareInfo & hardware_info)
+[8.886s]       |                          [01;36m[K^~~~~~~[m[K
+[22.319s] [100%] [32m[1mLinking CXX shared library libhbridge_control.so[0m
+[24.796s] [100%] Built target hbridge_control
+[24.866s] Invoked command in '/home/pavan/pavan/ugv_ws/build/hbridge_control' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/pavan/pavan/ugv_ws/build/hbridge_control -- -j4 -l4
+[24.884s] Invoking command in '/home/pavan/pavan/ugv_ws/build/hbridge_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/pavan/pavan/ugv_ws/build/hbridge_control
+[24.928s] -- Install configuration: ""
+[24.929s] -- Up-to-date: /home/pavan/pavan/ugv_ws/install/hbridge_control/share/hbridge_control/hbridge_control_interface.xml
+[24.932s] -- Installing: /home/pavan/pavan/ugv_ws/install/hbridge_control/lib/hbridge_control/libhbridge_control.so
+[24.935s] -- Set non-toolchain portion of runtime path of "/home/pavan/pavan/ugv_ws/install/hbridge_control/lib/hbridge_control/libhbridge_control.so" to ""
+[24.936s] -- Up-to-date: /home/pavan/pavan/ugv_ws/install/hbridge_control/share/hbridge_control/motor_interface
+[24.942s] -- Up-to-date: /home/pavan/pavan/ugv_ws/install/hbridge_control/share/hbridge_control/motor_interface/mobile_base_hardware_interface.hpp
+[24.942s] -- Up-to-date: /home/pavan/pavan/ugv_ws/install/hbridge_control/share/hbridge_control/include
+[24.942s] -- Up-to-date: /home/pavan/pavan/ugv_ws/install/hbridge_control/share/hbridge_control/include/motor_interface
+[24.943s] -- Up-to-date: /home/pavan/pavan/ugv_ws/install/hbridge_control/share/hbridge_control/include/motor_interface/mobile_base_hardware_interface.hpp
+[24.943s] -- Up-to-date: /home/pavan/pavan/ugv_ws/install/hbridge_control/share/hbridge_control/hbridge_control_interface.xml
+[24.948s] -- Up-to-date: /home/pavan/pavan/ugv_ws/install/hbridge_control/share/hbridge_control/environment/library_path.sh
+[24.951s] -- Up-to-date: /home/pavan/pavan/ugv_ws/install/hbridge_control/share/hbridge_control/environment/library_path.dsv
+[24.954s] -- Up-to-date: /home/pavan/pavan/ugv_ws/install/hbridge_control/share/ament_index/resource_index/package_run_dependencies/hbridge_control
+[24.954s] -- Up-to-date: /home/pavan/pavan/ugv_ws/install/hbridge_control/share/ament_index/resource_index/parent_prefix_path/hbridge_control
+[24.955s] -- Up-to-date: /home/pavan/pavan/ugv_ws/install/hbridge_control/share/hbridge_control/environment/ament_prefix_path.sh
+[24.955s] -- Up-to-date: /home/pavan/pavan/ugv_ws/install/hbridge_control/share/hbridge_control/environment/ament_prefix_path.dsv
+[24.955s] -- Up-to-date: /home/pavan/pavan/ugv_ws/install/hbridge_control/share/hbridge_control/environment/path.sh
+[24.955s] -- Up-to-date: /home/pavan/pavan/ugv_ws/install/hbridge_control/share/hbridge_control/environment/path.dsv
+[24.955s] -- Up-to-date: /home/pavan/pavan/ugv_ws/install/hbridge_control/share/hbridge_control/local_setup.bash
+[24.955s] -- Up-to-date: /home/pavan/pavan/ugv_ws/install/hbridge_control/share/hbridge_control/local_setup.sh
+[24.955s] -- Up-to-date: /home/pavan/pavan/ugv_ws/install/hbridge_control/share/hbridge_control/local_setup.zsh
+[24.955s] -- Up-to-date: /home/pavan/pavan/ugv_ws/install/hbridge_control/share/hbridge_control/local_setup.dsv
+[24.956s] -- Installing: /home/pavan/pavan/ugv_ws/install/hbridge_control/share/hbridge_control/package.dsv
+[24.956s] -- Up-to-date: /home/pavan/pavan/ugv_ws/install/hbridge_control/share/ament_index/resource_index/packages/hbridge_control
+[24.957s] -- Up-to-date: /home/pavan/pavan/ugv_ws/install/hbridge_control/share/ament_index/resource_index/hardware_interface__pluginlib__plugin/hbridge_control
+[24.958s] -- Up-to-date: /home/pavan/pavan/ugv_ws/install/hbridge_control/share/hbridge_control/cmake/ament_cmake_export_libraries-extras.cmake
+[24.959s] -- Up-to-date: /home/pavan/pavan/ugv_ws/install/hbridge_control/share/hbridge_control/cmake/ament_cmake_export_dependencies-extras.cmake
+[24.959s] -- Up-to-date: /home/pavan/pavan/ugv_ws/install/hbridge_control/share/hbridge_control/cmake/hbridge_controlConfig.cmake
+[24.959s] -- Up-to-date: /home/pavan/pavan/ugv_ws/install/hbridge_control/share/hbridge_control/cmake/hbridge_controlConfig-version.cmake
+[24.960s] -- Up-to-date: /home/pavan/pavan/ugv_ws/install/hbridge_control/share/hbridge_control/package.xml
+[24.973s] Invoked command in '/home/pavan/pavan/ugv_ws/build/hbridge_control' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/pavan/pavan/ugv_ws/build/hbridge_control

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>hbridge_control</name>
+  <version>0.0.1</version>
+  <description>H-bridge motor hardware interface for ros2_control</description>
+  <maintainer email="pavan@example.com">Pavan</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>hardware_interface</depend>
+  <depend>rclcpp</depend>
+  <depend>rclcpp_lifecycle</depend>
+  <depend>pluginlib</depend>
+
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+    <pluginlib plugin="${prefix}/hbridge_control_interface.xml"/>
+  </export>
+</package>

@@ -26,6 +26,18 @@ def generate_launch_description():
         parameters=[robot_controllers],
     )    
     
+    # lidar_node= Node(
+    #         package='rplidar_ros',
+    #         executable='rplidar_composition',
+    #         output='screen',
+    #         parameters=[{
+    #             'serial_port': '/dev/serial/by-path/platform-fd500000.pcie-pci-0000:01:00.0-usb-0:1.3:1.0-port0',
+    #             'frame_id': 'laser_frame',
+    #             'angle_compensate': True,
+    #             'scan_mode': 'Standard'
+    #         }]
+    #     )
+
     joint_state_broadcaster_spawner = Node(
         package="controller_manager",
         executable="spawner",
@@ -37,6 +49,18 @@ def generate_launch_description():
         executable="spawner",
         arguments=["diff_drive_controller"],
     )
+
+    arm_drive_controller_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["arm_joints_controller"],
+    )
+
+    # lidar_joint_controller_spawner = Node(
+    #     package="controller_manager",
+    #     executable="spawner",
+    #     arguments=["lidar_joint_controller"],
+    # )
 
     rviz_node = Node(
         package="rviz2",
@@ -50,5 +74,7 @@ def generate_launch_description():
         control_node,
         joint_state_broadcaster_spawner,
         diff_drive_controller_spawner,
+        arm_drive_controller_spawner,
+      #  lidar_node,
         rviz_node,
     ])

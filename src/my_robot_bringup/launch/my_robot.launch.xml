@@ -17,6 +17,18 @@
 
     <node pkg="controller_manager" exec="spawner" args="diff_drive_controller" />
 
+    <!-- <node pkg="controller_manager" exec="spawner" args="arm_joints_controller" /> -->
+
+    <node pkg="rplidar_ros" exec="rplidar_composition" name="rplidar_node" output="screen">
+    <param name="serial_port" value="/dev/ttyUSB1"/>
+    <param name="serial_baudrate" value="115200"/>
+    <param name="frame_id" value="lidar_link"/>
+    <param name="angle_compensate" value="true"/>
+    <param name="scan_mode" value="Standard"/>
+    </node>
+  
+
+    <!-- <node pkg="controller_manager" exec="spawner" args="lidar_joint_controller" /> -->
     <node pkg="rviz2" exec="rviz2" output="screen" 
           args="-d $(var rviz_config_path)" />
 </launch>

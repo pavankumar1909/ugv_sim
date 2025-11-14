@@ -43,8 +43,8 @@ arm_joints_controller:
     joints: ["arm_joint1", "arm_joint2"]
     interface_name: "position"    
 
-# lidar_joint_controller:
-#   ros__parameters:
-#     joints: 
-#     - lidar_joint    
+lidar_joint_controller:
+  ros__parameters:
+    joints: 
+    - lidar_joint    
   

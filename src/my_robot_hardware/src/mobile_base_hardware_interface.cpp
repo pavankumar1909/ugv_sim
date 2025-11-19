@@ -100,8 +100,8 @@ hardware_interface::return_type MobileBaseHardwareInterface::write(
     if (std::isnan(left_cmd) || std::isinf(left_cmd)) left_cmd = 0.0;
     if (std::isnan(right_cmd) || std::isinf(right_cmd)) right_cmd = 0.0;
 
-    // Invert direction if needed
-    right_cmd = -right_cmd;
+    // // Invert direction if needed
+    // right_cmd = -right_cmd;
 
     driver_->setTargetVelocity(left_cmd, right_cmd);
     return hardware_interface::return_type::OK;

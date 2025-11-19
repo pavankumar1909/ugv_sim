@@ -3,15 +3,38 @@
 
  
  <xacro:property name="_10cm" value="0.1" />
- <xacro:property name="lidar_length" value="0.2" />
- <xacro:property name="lidar_radius" value="0.1"/>
+ <xacro:property name="lidar_length" value="0.06" />
+ <xacro:property name="lidar_radius" value="0.04"/>
 
-  
+ <xacro:property name="battery_length" value="0.11" />
+ <xacro:property name="battery_width" value="0.09" />
+ <xacro:property name="battery_height" value="0.065" />
+
+
+  <!--battery joint-->
+   
+  <joint name="battery_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="battery_link"/>
+    <origin xyz="${base_length/5.0+0.025} 0 ${base_height}" rpy="0 0 0"/>
+  </joint>
+
+  <!-- battery link -->
+   <link name="battery_link">
+        <visual>
+            <geometry>
+                <box size="${battery_length} ${battery_width} ${battery_height}" />
+            </geometry>
+            <origin xyz="0 0 ${base_height/2.0}" rpy="0 0 0" />
+            <material name="yellow" />
+        </visual>
+    </link>
+
    <!-- Lidar Joint -->
   <joint name="lidar_joint" type="fixed">
-    <parent link="base_link"/>
+    <parent link="battery_link"/>
     <child link="lidar_link"/>
-    <origin xyz="0.15 0 0.2" rpy="0 0 0"/>
+    <origin xyz="0 0 ${battery_height+0.04}" rpy="0 0 0"/>
   </joint>
 
   <!-- Lidar Link -->
@@ -20,7 +43,7 @@
       <geometry>
         <cylinder length="${lidar_length}" radius="${lidar_radius}"/>
       </geometry>
-      <origin xyz="0 0 0.01" rpy="0 0 0"/>
+      <origin xyz="0 0 0.0" rpy="0 0 0"/>
       <material name="black"/>
 
     </visual>

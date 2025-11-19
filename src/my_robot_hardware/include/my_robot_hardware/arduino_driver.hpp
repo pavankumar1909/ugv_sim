@@ -78,12 +78,55 @@ public:
 private:
     std::string buildMotorCommand(int left, int right)
     {
-        auto makeCmd = [](int s) {
-            if (s > 0) return "F" + std::to_string(s) + "\n";
-            if (s < 0) return "B" + std::to_string(-s) + "\n";
-            return std::string("S0\n");
-        };
-        return makeCmd(left) + makeCmd(right);
+      //stop both wheels
+      if(left ==0 && right == 0)
+      {
+           return "S0\n";
+      }
+      
+      // forward
+      if(left > 0 && right > 0)
+      {
+           return "F" + std::to_string((left+right)/2)+"\n";
+      }
+
+      // backward
+      if(left < 0 && right < 0)
+      {
+           return "B"+ std::to_string((-left-right)/2)+"\n";
+      }
+      
+      // turn left-- right wheel forward,left wheel backward
+      if(left < 0 && right > 0)
+      {
+           return "L"+ std::to_string((abs(left)+right)/2)+"\n";
+      }
+
+      // turn right -- left wheel forward,right wheel backward
+      if(left > 0 && right < 0)
+      {
+           return "R"+ std::to_string((left+abs(right))/2)+"\n";
+      }
+
+       // turn back left 
+       if(left < 0 && right < 0 && abs(left) < abs(right))
+      {
+           return "BL\n"+ std::to_string(abs(right))+"\n";
+      }
+
+       // turn back right 
+       if(left < 0 && right < 0 && abs(left) > abs(right))
+      {
+           return "BR\n"+ std::to_string(abs(left))+"\n";
+      }
+    
+      //default
+       
+      return "S0\n";
+      
+      
+
+
     }
 
     std::string device_name_;
